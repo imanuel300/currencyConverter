@@ -1,0 +1,27 @@
+<style>
+    button {
+        text-align: center;
+        width: 160px;
+        height: 50px;
+        border-radius: 5px;
+        color: white;
+        font-weight: 500;
+        background-color: #417de0;
+        transition: 0.5s;
+    }
+</style>
+<div class="container">
+    <div *ngIf="LastSearch==''">no Results..</div>
+    <div *ngIf="LastSearch!=''">
+        <h1>All Last Search Results</h1>
+        <div *ngFor="let t_LastSearch of splitDescription(); index as i;">
+            <li *ngIf="i != 0">{{t_LastSearch}}</li>
+        </div>
+<br>
+<br>
+<br>
+        <div class="submit-btn">
+            <button type="submit" (click)="ClearResults()">Clear Results</button>
+        </div>
+    </div>
+</div>
